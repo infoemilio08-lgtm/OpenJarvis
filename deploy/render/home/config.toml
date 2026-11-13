@@ -39,6 +39,5 @@ default_channel = "telegram"
 default_agent = "orchestrator"
 
 [channel.telegram]
-# Solo tu chat puede hablar con el bot. Se sobrescribe con la variable
-# TELEGRAM_ALLOWED_CHAT_IDS si el arranque la define.
-allowed_chat_ids = ""
+# Solo tu chat puede hablar con el bot.
+allowed_chat_ids = "2025689096"
