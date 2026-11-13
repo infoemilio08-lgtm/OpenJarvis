@@ -513,6 +513,8 @@ class OrchestratorAgent(ToolUsingAgent):
                             continue
 
                     tool_result = self._executor.execute(tc)
+                    if not tool_result.success:
+                        logger.warning("Tool %s failed: %s", tc.name, str(tool_result.content)[:300])
                     all_tool_results.append(tool_result)
 
                     # Append tool response message

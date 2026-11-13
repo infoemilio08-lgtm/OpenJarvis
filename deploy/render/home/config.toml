@@ -13,7 +13,7 @@ max_tokens = 2048
 [agent]
 default_agent = "orchestrator"
 max_turns = 8
-tools = "web_search,calculator,think"
+tools = "web_search,leer_web,tiempo,calculator,think"
 context_from_memory = false
 
 [tools.storage]
