@@ -37,7 +37,7 @@ WORKDIR /app
 # only application code changes.
 COPY pyproject.toml uv.lock README.md ./
 RUN pip install --no-cache-dir uv && \
-    uv export --frozen --no-dev --extra server --no-emit-project > requirements.txt && \
+    uv export --frozen --no-dev --extra server --extra inference-google --no-emit-project > requirements.txt && \
     uv pip install --system --no-deps -r requirements.txt && \
     uv pip install --system --no-deps "maturin>=1.12.6,<2"
 
@@ -76,6 +76,8 @@ RUN groupadd --system --gid 10001 openjarvis && \
     useradd --system --uid 10001 --gid openjarvis \
         --create-home --home-dir /home/openjarvis openjarvis
 ENV HOME=/home/openjarvis
+# Configuración en español de "mi-jarvis" (Gemini + Telegram).
+COPY --chown=openjarvis:openjarvis deploy/render/home/ /home/openjarvis/.openjarvis/
 USER openjarvis
 
 EXPOSE 8000

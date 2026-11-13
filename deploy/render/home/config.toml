@@ -1,0 +1,44 @@
+# Configuración de JARVIS en Render (nube, plan gratuito).
+# Las claves (GEMINI_API_KEY, TELEGRAM_BOT_TOKEN, OPENJARVIS_API_KEY) se
+# ponen como variables de entorno en el panel de Render, nunca aquí.
+
+[engine]
+default = "cloud"
+
+[intelligence]
+default_model = "gemini-flash-lite-latest"
+temperature = 0.7
+max_tokens = 2048
+
+[agent]
+default_agent = "orchestrator"
+max_turns = 8
+tools = "web_search,calculator,think"
+context_from_memory = false
+
+[tools.storage]
+default_backend = "sqlite"
+
+[tools.mcp]
+enabled = false
+
+[server]
+host = "0.0.0.0"
+port = 10000
+agent = "orchestrator"
+
+[security]
+profile = "personal"
+
+[telemetry]
+enabled = false
+
+[channel]
+enabled = true
+default_channel = "telegram"
+default_agent = "orchestrator"
+
+[channel.telegram]
+# Solo tu chat puede hablar con el bot. Se sobrescribe con la variable
+# TELEGRAM_ALLOWED_CHAT_IDS si el arranque la define.
+allowed_chat_ids = ""

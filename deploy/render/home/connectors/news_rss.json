@@ -1,0 +1,7 @@
+{
+  "feeds": [
+    {"name": "El País - Portada", "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada"},
+    {"name": "Xataka (tecnología)", "url": "https://www.xataka.com/feedburner.xml"},
+    {"name": "BBC Mundo", "url": "https://feeds.bbci.co.uk/mundo/rss.xml"}
+  ]
+}
