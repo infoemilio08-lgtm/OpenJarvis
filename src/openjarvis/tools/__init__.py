@@ -48,6 +48,11 @@ except ImportError:
     pass
 
 try:
+    import openjarvis.tools.mi_jarvis_personal  # noqa: F401
+except ImportError:
+    pass
+
+try:
     import openjarvis.tools.fx_macro  # noqa: F401
 except ImportError:
     pass
